@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<!--Plantilla inicial de Bootstrap 4-->
+
+<head>
+    <title>SifuentesCell Software de Gestión</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Software de Gestión">
+    <meta name="author" content="Stiven Sifuentes">
+
+    <!-- Cargar el CSS de Boostrap-->
+    <link rel="stylesheet" type="text/css" href="/recursos/bootstrap.min.css">
+    <!-- Cargar estilos propios -->
+    <link rel="stylesheet" type="text/css" href="/recursos/estilos.css">
+    
+    <!-- Cargar Jquery -->
+    <script type="text/javascript" language="javascript" src="/recursos/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Definición del menú -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand"  target="_blank" href="#"><h3 >SifuentesCell Software 
+            de Gestión</h3></a>
+        <button aria-label="Mostrar u ocultar menú" class="navbar-toggler" id="botonMenu" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/login" class="btn btn-danger col-md-12 mb-2">Inicia Sesion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            let menu = document.querySelector("#menu"),
+                botonMenu = document.querySelector("#botonMenu");
+            if (menu) {
+                botonMenu.addEventListener("click", () => menu.classList.toggle("show"));
+            }
+        });
+		
+		$(document).ready(function () {
+		     $('#filtrar').keyup(function () {
+
+                    let rex = new RegExp($(this).val(), 'i');
+                    $('.buscar tr').hide();
+                    $('.buscar tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+
+                })
+		
+		});
+		
+    </script>
+    <!-- Termina la definición del menú -->
+    <main role="main" class="container">
+        <div class="row">         
+</body>            

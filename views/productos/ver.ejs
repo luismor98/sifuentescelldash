@@ -1,0 +1,55 @@
+<%- include("../headerProduc"); %>
+<div class="col-12">
+    <br>
+    <h1 class="text-center"> Listado de Productos</h1>
+	<br>
+    <h3 class="text-center">Buscador</h3>
+	<div class="input-group">
+       <input id="filtrar" type="text" class="form-control text-center" placeholder="Ingresa el Nombre o Marca del Producto que deseas buscar...">
+	</div>
+	<br>
+    <section>
+        <div class="col-12 my-2 p-0 p-md-3">
+            <div class="card bg-light">
+                <div class="card-header text-black text-center" style="background:#61ec03ef; "><strong>Tabla de Productos</strong></div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered .table-responsive{-sm|-md|-lg|-xl}">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Marca</th>
+                                        <th>Especificaciones</th>
+                                        <th>Precio</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="buscar">
+                                    <% productos.forEach(producto => { %>
+                                        <tr>
+                                            <td><%= producto.nombre %></td>
+                                            <td><%= producto.marca %></td>
+                                            <td><%= producto.especificaciones %></td>
+                                            <td><%= producto.precio %></td>
+                                            <td>
+                                                <a href="/productos/editar/<%= producto.id %>" class="btn btn-success">
+                                                    Editar
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="/productos/eliminar/<%= producto.id %>" class="btn btn-danger">
+                                                    Eliminar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <% })%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>    
+            </div>    
+        </div>    
+    </section>
+</div>
