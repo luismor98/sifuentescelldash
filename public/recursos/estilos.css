@@ -1,0 +1,21 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, 
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #AAA1;
+    padding-top: 90px
+}
+a {
+    color: #00B7FF;
+}
+
